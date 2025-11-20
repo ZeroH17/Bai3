@@ -1,0 +1,34 @@
+R_DEF: Internal format may change without notice
+local
+color black
+color white
+drawable ic_launcher_background
+drawable ic_launcher_foreground
+drawable ic_music_note
+drawable ic_next
+drawable ic_pause
+drawable ic_play
+drawable seekbar_spotify_progress
+id btnNext
+id btnPlayPause
+id controlContainer
+id imgCover
+id infoContainer
+id miniPlayer
+id miniPlayerRoot
+id recycler
+id seekBar
+id tvArtist
+id tvMiniArtist
+id tvMiniTitle
+id tvTitle
+layout activity_main
+layout item_song
+layout mini_player
+mipmap ic_launcher
+mipmap ic_launcher_round
+string app_name
+style Base.Theme.Music_app
+style Theme.MusicApp
+xml backup_rules
+xml data_extraction_rules
