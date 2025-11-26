@@ -4,21 +4,44 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <!-- Title -->
-    <TextView
-        android:id="@+id/tvTitle"
-        android:text="Your Library"
-        android:textSize="26sp"
-        android:textStyle="bold"
-        android:textColor="#FFFFFF"
-        android:padding="16dp"
+    <LinearLayout
+        android:id="@+id/headerLayout"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"/>
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:padding="8dp">
+
+        <!-- Title -->
+        <TextView
+            android:id="@+id/tvTitle"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Your Library"
+            android:textSize="26sp"
+            android:textStyle="bold"
+            android:textColor="#FFFFFF"
+            android:ellipsize="end"
+            android:singleLine="true"
+            android:paddingStart="8dp"
+            android:paddingEnd="8dp"/>
+
+        <!-- Shuffle button -->
+        <ImageButton
+            android:id="@+id/btnShuffle"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:padding="12dp"
+            android:background="@android:color/transparent"
+            android:src="@drawable/ic_shuffle"
+            android:tint="#FFFFFF"/>
+    </LinearLayout>
 
     <!-- RecyclerView danh sách nhạc -->
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recycler"
-        android:paddingTop="60dp"
+        android:layout_below="@id/headerLayout"
         android:paddingBottom="80dp"
         android:layout_width="match_parent"
         android:layout_height="match_parent"/>
@@ -88,17 +111,28 @@
             android:gravity="center_vertical">
 
             <ImageButton
+                android:id="@+id/btnBack"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:padding="12dp"
+                android:background="@android:color/transparent"
+                android:src="@drawable/ic_back"
+                android:tint="#FFFFFF"/>
+
+            <ImageButton
                 android:id="@+id/btnPlayPause"
-                android:layout_width="40dp"
-                android:layout_height="40dp"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:padding="12dp"
                 android:background="@android:color/transparent"
                 android:src="@drawable/ic_play"
                 android:tint="#FFFFFF"/>
 
             <ImageButton
                 android:id="@+id/btnNext"
-                android:layout_width="32dp"
-                android:layout_height="32dp"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:padding="12dp"
                 android:layout_marginStart="8dp"
                 android:background="@android:color/transparent"
                 android:src="@drawable/ic_next"

@@ -43,7 +43,10 @@ public class MainActivity extends AppCompatActivity {
 
     private SeekBar seekBar;
     private TextView tvMiniTitle, tvMiniArtist;
-    private ImageButton btnPlayPause, btnNext;
+    private ImageButton btnPlayPause, btnNext, btnBack;
+
+    private ImageButton btnShuffle;
+    private boolean isShuffle = false;
 
     private Handler uiHandler = new Handler();
 
@@ -55,13 +58,9 @@ public class MainActivity extends AppCompatActivity {
         initUI();
 
         checkAndRequestPermission();
-
-        // Nếu app mở từ file audio
         handleIntent(getIntent());
-
         startSeekBarUpdater();
 
-        // Bind service 1 lần ngay khi app start
         Intent serviceIntent = new Intent(this, MusicService.class);
         startService(serviceIntent);
         bindService(serviceIntent, connection, BIND_AUTO_CREATE);
@@ -73,25 +72,64 @@ public class MainActivity extends AppCompatActivity {
         adapter = new MusicAdapter(songs);
         recyclerView.setAdapter(adapter);
 
+        // --- Mini player UI ---
         seekBar = findViewById(R.id.seekBar);
         tvMiniTitle = findViewById(R.id.tvMiniTitle);
         tvMiniArtist = findViewById(R.id.tvMiniArtist);
         btnPlayPause = findViewById(R.id.btnPlayPause);
         btnNext = findViewById(R.id.btnNext);
 
+        // --- Nút quay về (previous track) ---
+        btnBack = findViewById(R.id.btnBack);
+        btnBack.setOnClickListener(v -> {
+            if (!bound || musicService == null) return;
+            Song current = musicService.getCurrentSong();
+            if (songs.isEmpty()) return;
+
+            int currentIndex = -1;
+            if (current != null) {
+                // Tìm index an toàn bằng path (tránh phụ thuộc equals())
+                String curPath = current.getPath();
+                for (int i = 0; i < songs.size(); i++) {
+                    Song s = songs.get(i);
+                    if (s != null && s.getPath() != null && s.getPath().equals(curPath)) {
+                        currentIndex = i;
+                        break;
+                    }
+                }
+            }
+
+            // Nếu không tìm thấy current (ví dụ chưa phát), lấy index 0
+            if (currentIndex == -1) {
+                // Nếu đang rỗng thì không làm gì
+                if (songs.isEmpty()) return;
+                // Phát bài cuối làm previous của "chưa có bài"
+                musicService.setPlaylist(songs);
+                musicService.playAt(Math.max(0, songs.size() - 1));
+            } else {
+                // previous with wrap-around
+                int prevIndex = (currentIndex - 1 + songs.size()) % songs.size();
+                musicService.playAt(prevIndex);
+            }
+            updateMiniPlayer();
+        });
+
+        // --- Click bài hát ---
         adapter.setOnItemClickListener(position -> {
             if (!bound || musicService == null) return;
-
             musicService.setPlaylist(songs);
             musicService.playAt(position);
             updateMiniPlayer();
         });
 
+        // --- Play / Pause ---
         btnPlayPause.setOnClickListener(v -> {
             if (!bound || musicService == null) return;
 
             if (musicService.isPlaying()) {
+                // Chỉ pause, không dừng service hay finish activity
                 musicService.pause();
+                btnPlayPause.setImageResource(R.drawable.ic_play);
             } else {
                 Song s = musicService.getCurrentSong();
                 if (s == null && !songs.isEmpty()) {
@@ -100,11 +138,12 @@ public class MainActivity extends AppCompatActivity {
                 } else {
                     musicService.play();
                 }
+                btnPlayPause.setImageResource(R.drawable.ic_pause);
             }
-            updateMiniPlayer();
         });
 
 
+        // --- Next ---
         btnNext.setOnClickListener(v -> {
             if (!bound || musicService == null) return;
 
@@ -118,29 +157,47 @@ public class MainActivity extends AppCompatActivity {
             updateMiniPlayer();
         });
 
+        // --- Seekbar ---
         if (seekBar != null) {
             seekBar.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
-                boolean fromUser;
-
-                @Override
-                public void onProgressChanged(SeekBar seekBar, int progress, boolean isUser) {
-                    fromUser = isUser;
-                }
-
-                @Override
-                public void onStartTrackingTouch(SeekBar seekBar) { }
+                @Override public void onProgressChanged(SeekBar seekBar, int progress, boolean isUser) {}
+                @Override public void onStartTrackingTouch(SeekBar seekBar) {}
 
                 @Override
                 public void onStopTrackingTouch(SeekBar seekBar) {
-                    if (bound && musicService != null) musicService.seekTo(seekBar.getProgress());
+                    if (bound && musicService != null)
+                        musicService.seekTo(seekBar.getProgress());
                 }
             });
         }
+
+        // --- Nút shuffle ---
+        btnShuffle = findViewById(R.id.btnShuffle);
+        btnShuffle.setOnClickListener(v -> {
+            if (!bound || musicService == null || songs.isEmpty()) return;
+
+            isShuffle = !isShuffle; // bật / tắt shuffle
+
+            if (isShuffle) {
+                // Shuffle danh sách
+                List<Song> shuffled = new ArrayList<>(songs);
+                java.util.Collections.shuffle(shuffled);
+                musicService.setPlaylist(shuffled);
+                musicService.playAt(0);
+                Toast.makeText(this, "Bật phát ngẫu nhiên", Toast.LENGTH_SHORT).show();
+            } else {
+                // Trở về danh sách gốc
+                musicService.setPlaylist(songs);
+                musicService.playAt(0);
+                Toast.makeText(this, "Tắt phát ngẫu nhiên", Toast.LENGTH_SHORT).show();
+            }
+
+            updateMiniPlayer();
+        });
+
     }
 
-    // ============================
-    //  PERMISSION
-    // ============================
+    // ========= PERMISSION =========
     private String[] getRequiredPermissions() {
         if (Build.VERSION.SDK_INT >= 33) {
             return new String[]{ Manifest.permission.READ_MEDIA_AUDIO };
@@ -159,9 +216,7 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
-    // ============================
-    //  LOAD FILE NHẠC
-    // ============================
+    // ========= LOAD FILE MUSIC =========
     private void loadSongsFromMusicFolder() {
         File musicDir = Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_MUSIC);
 
@@ -201,9 +256,7 @@ public class MainActivity extends AppCompatActivity {
         adapter.notifyDataSetChanged();
     }
 
-    // ============================
-    //  OPEN WITH FILE AUDIO
-    // ============================
+    // ========= OPEN WITH AUDIO FILE =========
     @Override
     protected void onNewIntent(Intent intent) {
         super.onNewIntent(intent);
@@ -221,9 +274,7 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
-    // ============================
-    //  SERVICE CONNECTION
-    // ============================
+    // ========= SERVICE CONNECTION =========
     private ServiceConnection connection = new ServiceConnection() {
         @Override
         public void onServiceConnected(ComponentName name, IBinder service) {
@@ -242,9 +293,7 @@ public class MainActivity extends AppCompatActivity {
         }
     };
 
-    // ============================
-    //  MINI PLAYER UI
-    // ============================
+    // ========= MINI PLAYER UI UPDATE =========
     private void updateMiniPlayer() {
         if (!bound || musicService == null) return;
 
@@ -254,10 +303,7 @@ public class MainActivity extends AppCompatActivity {
             tvMiniArtist.setText(s.getArtist());
             seekBar.setMax(musicService.getDuration());
             seekBar.setProgress(musicService.getCurrentPosition());
-
-            btnPlayPause.setImageResource(
-                    musicService.isPlaying() ? R.drawable.ic_pause : R.drawable.ic_play
-            );
+            btnPlayPause.setImageResource(musicService.isPlaying() ? R.drawable.ic_pause : R.drawable.ic_play);
         } else {
             tvMiniTitle.setText("No song");
             tvMiniArtist.setText("");
@@ -267,10 +313,7 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
-
-    // ============================
-    //  SEEKBAR AUTO UPDATE
-    // ============================
+    // ========= SEEK BAR AUTO UPDATE =========
     private void startSeekBarUpdater() {
         uiHandler.post(new Runnable() {
             @Override
@@ -278,7 +321,6 @@ public class MainActivity extends AppCompatActivity {
                 if (bound && musicService != null && musicService.isPlaying()) {
                     seekBar.setMax(musicService.getDuration());
                     seekBar.setProgress(musicService.getCurrentPosition());
-                    updateMiniPlayer();
                 }
                 uiHandler.postDelayed(this, 500);
             }

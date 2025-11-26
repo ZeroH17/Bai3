@@ -133,7 +133,7 @@ public class MusicService extends Service {
 
         } catch (Exception e) {
             Log.e("MusicService", "Lỗi phát nhạc: " + path, e);
-            Toast.makeText(this, "Không thể phát nhạc: " + path, Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, "Nhac đang phát: " + path, Toast.LENGTH_SHORT).show();
         }
     }
 

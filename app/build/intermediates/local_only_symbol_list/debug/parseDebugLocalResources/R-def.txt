@@ -2,16 +2,22 @@ R_DEF: Internal format may change without notice
 local
 color black
 color white
+drawable banner_music
+drawable ic_back
 drawable ic_launcher_background
 drawable ic_launcher_foreground
 drawable ic_music_note
 drawable ic_next
 drawable ic_pause
 drawable ic_play
+drawable ic_shuffle
 drawable seekbar_spotify_progress
+id btnBack
 id btnNext
 id btnPlayPause
+id btnShuffle
 id controlContainer
+id headerLayout
 id imgCover
 id infoContainer
 id miniPlayer

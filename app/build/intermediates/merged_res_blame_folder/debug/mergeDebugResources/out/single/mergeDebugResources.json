@@ -1,102 +1,110 @@
 [
     {
-        "merged": "C:\\Users\\Adminstration\\.gradle\\daemon\\8.13\\com.example.music_app-debug-37:\\layout_mini_player.xml.flat",
-        "source": "C:\\Users\\Adminstration\\.gradle\\daemon\\8.13\\com.example.music_app-main-39:\\layout\\mini_player.xml"
+        "merged": "com.example.music_app-debug-37:/mipmap-hdpi_ic_launcher_round.webp.flat",
+        "source": "com.example.music_app-main-39:/mipmap-hdpi/ic_launcher_round.webp"
     },
     {
-        "merged": "C:\\Users\\Adminstration\\.gradle\\daemon\\8.13\\com.example.music_app-debug-37:\\drawable_seekbar_spotify_progress.xml.flat",
-        "source": "C:\\Users\\Adminstration\\.gradle\\daemon\\8.13\\com.example.music_app-main-39:\\drawable\\seekbar_spotify_progress.xml"
+        "merged": "com.example.music_app-debug-37:/mipmap-xhdpi_ic_launcher.webp.flat",
+        "source": "com.example.music_app-main-39:/mipmap-xhdpi/ic_launcher.webp"
     },
     {
-        "merged": "C:\\Users\\Adminstration\\.gradle\\daemon\\8.13\\com.example.music_app-debug-37:\\mipmap-mdpi_ic_launcher.webp.flat",
-        "source": "C:\\Users\\Adminstration\\.gradle\\daemon\\8.13\\com.example.music_app-main-39:\\mipmap-mdpi\\ic_launcher.webp"
+        "merged": "com.example.music_app-debug-37:/drawable_ic_next.xml.flat",
+        "source": "com.example.music_app-main-39:/drawable/ic_next.xml"
     },
     {
-        "merged": "C:\\Users\\Adminstration\\.gradle\\daemon\\8.13\\com.example.music_app-debug-37:\\mipmap-xxhdpi_ic_launcher.webp.flat",
-        "source": "C:\\Users\\Adminstration\\.gradle\\daemon\\8.13\\com.example.music_app-main-39:\\mipmap-xxhdpi\\ic_launcher.webp"
+        "merged": "com.example.music_app-debug-37:/drawable_ic_pause.xml.flat",
+        "source": "com.example.music_app-main-39:/drawable/ic_pause.xml"
     },
     {
-        "merged": "C:\\Users\\Adminstration\\.gradle\\daemon\\8.13\\com.example.music_app-debug-37:\\xml_backup_rules.xml.flat",
-        "source": "C:\\Users\\Adminstration\\.gradle\\daemon\\8.13\\com.example.music_app-main-39:\\xml\\backup_rules.xml"
+        "merged": "com.example.music_app-debug-37:/drawable_seekbar_spotify_progress.xml.flat",
+        "source": "com.example.music_app-main-39:/drawable/seekbar_spotify_progress.xml"
     },
     {
-        "merged": "C:\\Users\\Adminstration\\.gradle\\daemon\\8.13\\com.example.music_app-debug-37:\\mipmap-xhdpi_ic_launcher_round.webp.flat",
-        "source": "C:\\Users\\Adminstration\\.gradle\\daemon\\8.13\\com.example.music_app-main-39:\\mipmap-xhdpi\\ic_launcher_round.webp"
+        "merged": "com.example.music_app-debug-37:/mipmap-anydpi_ic_launcher.xml.flat",
+        "source": "com.example.music_app-main-39:/mipmap-anydpi/ic_launcher.xml"
     },
     {
-        "merged": "C:\\Users\\Adminstration\\.gradle\\daemon\\8.13\\com.example.music_app-debug-37:\\drawable_ic_launcher_foreground.xml.flat",
-        "source": "C:\\Users\\Adminstration\\.gradle\\daemon\\8.13\\com.example.music_app-main-39:\\drawable\\ic_launcher_foreground.xml"
+        "merged": "com.example.music_app-debug-37:/drawable_ic_back.xml.flat",
+        "source": "com.example.music_app-main-39:/drawable/ic_back.xml"
     },
     {
-        "merged": "C:\\Users\\Adminstration\\.gradle\\daemon\\8.13\\com.example.music_app-debug-37:\\mipmap-anydpi_ic_launcher_round.xml.flat",
-        "source": "C:\\Users\\Adminstration\\.gradle\\daemon\\8.13\\com.example.music_app-main-39:\\mipmap-anydpi\\ic_launcher_round.xml"
+        "merged": "com.example.music_app-debug-37:/drawable_ic_play.xml.flat",
+        "source": "com.example.music_app-main-39:/drawable/ic_play.xml"
     },
     {
-        "merged": "C:\\Users\\Adminstration\\.gradle\\daemon\\8.13\\com.example.music_app-debug-37:\\mipmap-mdpi_ic_launcher_round.webp.flat",
-        "source": "C:\\Users\\Adminstration\\.gradle\\daemon\\8.13\\com.example.music_app-main-39:\\mipmap-mdpi\\ic_launcher_round.webp"
+        "merged": "com.example.music_app-debug-37:/drawable_ic_launcher_background.xml.flat",
+        "source": "com.example.music_app-main-39:/drawable/ic_launcher_background.xml"
     },
     {
         "merged": "com.example.music_app-debug-37:/layout_activity_main.xml.flat",
         "source": "com.example.music_app-main-39:/layout/activity_main.xml"
     },
     {
-        "merged": "C:\\Users\\Adminstration\\.gradle\\daemon\\8.13\\com.example.music_app-debug-37:\\layout_activity_main.xml.flat",
-        "source": "C:\\Users\\Adminstration\\.gradle\\daemon\\8.13\\com.example.music_app-main-39:\\layout\\activity_main.xml"
+        "merged": "com.example.music_app-debug-37:/drawable_ic_launcher_foreground.xml.flat",
+        "source": "com.example.music_app-main-39:/drawable/ic_launcher_foreground.xml"
     },
     {
-        "merged": "C:\\Users\\Adminstration\\.gradle\\daemon\\8.13\\com.example.music_app-debug-37:\\mipmap-hdpi_ic_launcher_round.webp.flat",
-        "source": "C:\\Users\\Adminstration\\.gradle\\daemon\\8.13\\com.example.music_app-main-39:\\mipmap-hdpi\\ic_launcher_round.webp"
+        "merged": "com.example.music_app-debug-37:/mipmap-xxxhdpi_ic_launcher.webp.flat",
+        "source": "com.example.music_app-main-39:/mipmap-xxxhdpi/ic_launcher.webp"
     },
     {
-        "merged": "C:\\Users\\Adminstration\\.gradle\\daemon\\8.13\\com.example.music_app-debug-37:\\drawable_ic_music_note.xml.flat",
-        "source": "C:\\Users\\Adminstration\\.gradle\\daemon\\8.13\\com.example.music_app-main-39:\\drawable\\ic_music_note.xml"
+        "merged": "com.example.music_app-debug-37:/mipmap-xxxhdpi_ic_launcher_round.webp.flat",
+        "source": "com.example.music_app-main-39:/mipmap-xxxhdpi/ic_launcher_round.webp"
     },
     {
-        "merged": "C:\\Users\\Adminstration\\.gradle\\daemon\\8.13\\com.example.music_app-debug-37:\\mipmap-xxxhdpi_ic_launcher_round.webp.flat",
-        "source": "C:\\Users\\Adminstration\\.gradle\\daemon\\8.13\\com.example.music_app-main-39:\\mipmap-xxxhdpi\\ic_launcher_round.webp"
+        "merged": "com.example.music_app-debug-37:/mipmap-xhdpi_ic_launcher_round.webp.flat",
+        "source": "com.example.music_app-main-39:/mipmap-xhdpi/ic_launcher_round.webp"
     },
     {
-        "merged": "C:\\Users\\Adminstration\\.gradle\\daemon\\8.13\\com.example.music_app-debug-37:\\drawable_ic_pause.xml.flat",
-        "source": "C:\\Users\\Adminstration\\.gradle\\daemon\\8.13\\com.example.music_app-main-39:\\drawable\\ic_pause.xml"
+        "merged": "com.example.music_app-debug-37:/xml_data_extraction_rules.xml.flat",
+        "source": "com.example.music_app-main-39:/xml/data_extraction_rules.xml"
     },
     {
-        "merged": "C:\\Users\\Adminstration\\.gradle\\daemon\\8.13\\com.example.music_app-debug-37:\\mipmap-xxhdpi_ic_launcher_round.webp.flat",
-        "source": "C:\\Users\\Adminstration\\.gradle\\daemon\\8.13\\com.example.music_app-main-39:\\mipmap-xxhdpi\\ic_launcher_round.webp"
+        "merged": "com.example.music_app-debug-37:/mipmap-hdpi_ic_launcher.webp.flat",
+        "source": "com.example.music_app-main-39:/mipmap-hdpi/ic_launcher.webp"
     },
     {
-        "merged": "C:\\Users\\Adminstration\\.gradle\\daemon\\8.13\\com.example.music_app-debug-37:\\mipmap-anydpi_ic_launcher.xml.flat",
-        "source": "C:\\Users\\Adminstration\\.gradle\\daemon\\8.13\\com.example.music_app-main-39:\\mipmap-anydpi\\ic_launcher.xml"
+        "merged": "com.example.music_app-debug-37:/mipmap-xxhdpi_ic_launcher.webp.flat",
+        "source": "com.example.music_app-main-39:/mipmap-xxhdpi/ic_launcher.webp"
     },
     {
-        "merged": "C:\\Users\\Adminstration\\.gradle\\daemon\\8.13\\com.example.music_app-debug-37:\\drawable_ic_next.xml.flat",
-        "source": "C:\\Users\\Adminstration\\.gradle\\daemon\\8.13\\com.example.music_app-main-39:\\drawable\\ic_next.xml"
+        "merged": "com.example.music_app-debug-37:/drawable_ic_shuffle.xml.flat",
+        "source": "com.example.music_app-main-39:/drawable/ic_shuffle.xml"
     },
     {
-        "merged": "C:\\Users\\Adminstration\\.gradle\\daemon\\8.13\\com.example.music_app-debug-37:\\mipmap-xxxhdpi_ic_launcher.webp.flat",
-        "source": "C:\\Users\\Adminstration\\.gradle\\daemon\\8.13\\com.example.music_app-main-39:\\mipmap-xxxhdpi\\ic_launcher.webp"
+        "merged": "com.example.music_app-debug-37:/layout_item_song.xml.flat",
+        "source": "com.example.music_app-main-39:/layout/item_song.xml"
     },
     {
-        "merged": "C:\\Users\\Adminstration\\.gradle\\daemon\\8.13\\com.example.music_app-debug-37:\\mipmap-hdpi_ic_launcher.webp.flat",
-        "source": "C:\\Users\\Adminstration\\.gradle\\daemon\\8.13\\com.example.music_app-main-39:\\mipmap-hdpi\\ic_launcher.webp"
+        "merged": "com.example.music_app-debug-37:/layout_mini_player.xml.flat",
+        "source": "com.example.music_app-main-39:/layout/mini_player.xml"
     },
     {
-        "merged": "C:\\Users\\Adminstration\\.gradle\\daemon\\8.13\\com.example.music_app-debug-37:\\mipmap-xhdpi_ic_launcher.webp.flat",
-        "source": "C:\\Users\\Adminstration\\.gradle\\daemon\\8.13\\com.example.music_app-main-39:\\mipmap-xhdpi\\ic_launcher.webp"
+        "merged": "com.example.music_app-debug-37:/mipmap-mdpi_ic_launcher.webp.flat",
+        "source": "com.example.music_app-main-39:/mipmap-mdpi/ic_launcher.webp"
     },
     {
-        "merged": "C:\\Users\\Adminstration\\.gradle\\daemon\\8.13\\com.example.music_app-debug-37:\\drawable_ic_launcher_background.xml.flat",
-        "source": "C:\\Users\\Adminstration\\.gradle\\daemon\\8.13\\com.example.music_app-main-39:\\drawable\\ic_launcher_background.xml"
+        "merged": "com.example.music_app-debug-37:/mipmap-mdpi_ic_launcher_round.webp.flat",
+        "source": "com.example.music_app-main-39:/mipmap-mdpi/ic_launcher_round.webp"
     },
     {
-        "merged": "C:\\Users\\Adminstration\\.gradle\\daemon\\8.13\\com.example.music_app-debug-37:\\drawable_ic_play.xml.flat",
-        "source": "C:\\Users\\Adminstration\\.gradle\\daemon\\8.13\\com.example.music_app-main-39:\\drawable\\ic_play.xml"
+        "merged": "com.example.music_app-debug-37:/mipmap-anydpi_ic_launcher_round.xml.flat",
+        "source": "com.example.music_app-main-39:/mipmap-anydpi/ic_launcher_round.xml"
     },
     {
-        "merged": "C:\\Users\\Adminstration\\.gradle\\daemon\\8.13\\com.example.music_app-debug-37:\\layout_item_song.xml.flat",
-        "source": "C:\\Users\\Adminstration\\.gradle\\daemon\\8.13\\com.example.music_app-main-39:\\layout\\item_song.xml"
+        "merged": "com.example.music_app-debug-37:/mipmap-xxhdpi_ic_launcher_round.webp.flat",
+        "source": "com.example.music_app-main-39:/mipmap-xxhdpi/ic_launcher_round.webp"
     },
     {
-        "merged": "C:\\Users\\Adminstration\\.gradle\\daemon\\8.13\\com.example.music_app-debug-37:\\xml_data_extraction_rules.xml.flat",
-        "source": "C:\\Users\\Adminstration\\.gradle\\daemon\\8.13\\com.example.music_app-main-39:\\xml\\data_extraction_rules.xml"
+        "merged": "com.example.music_app-debug-37:/drawable_banner_music.jpg.flat",
+        "source": "com.example.music_app-main-39:/drawable/banner_music.jpg"
+    },
+    {
+        "merged": "com.example.music_app-debug-37:/xml_backup_rules.xml.flat",
+        "source": "com.example.music_app-main-39:/xml/backup_rules.xml"
+    },
+    {
+        "merged": "com.example.music_app-debug-37:/drawable_ic_music_note.xml.flat",
+        "source": "com.example.music_app-main-39:/drawable/ic_music_note.xml"
     }
 ]
